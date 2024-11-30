@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Shops</title>
+</head>
+<body>
+    <h1>Available Shops for Lease</h1>
+
+    {% if available_shops %}
+        <ul>
+            {% for shop in available_shops %}
+                <li>
+                    <h3>{{ shop.shop_name }}</h3>
+                    <p>Area: {{ shop.area }} sq ft</p>
+                    <p>Rent Amount: ₹{{ shop.rent_amount }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No shops available for lease at the moment.</p>
+    {% endif %}
+</body>
+</html>

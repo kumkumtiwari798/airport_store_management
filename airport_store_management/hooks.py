@@ -146,9 +146,17 @@ app_license = "mit"
 # 	"weekly": [
 # 		"airport_store_management.tasks.weekly"
 # 	],
-# 	"monthly": [
-# 		"airport_store_management.tasks.monthly"
-# 	],
+    # "cron": {
+    #     "* * * * *": [
+    #         "airport_store_management.api.print_every_minute"
+    #     ],
+        # "monthly": [
+        #     "airport_store_management.api.send_rent_reminder_if_enabled"
+        # ],
+        # "all": [
+        #     "airport_store_management.api.send_mail"
+        # ]
+    # }
 # }
 
 # Testing
@@ -227,3 +235,8 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+doc_events = {
+    "Shop": {
+        "on_update": "airport_store_management.api.update_shop_counts"
+    }
+}
